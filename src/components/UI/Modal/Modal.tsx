@@ -4,9 +4,11 @@ import BackDrop from "../../BackDrop/BackDrop";
 interface Props extends React.PropsWithChildren{
     show: boolean;
     title: string;
-    onClose: React.MouseEventHandler
+    onClose: React.MouseEventHandler;
 }
-const Modal:React.FC<Props> = ({show,onClose, title, children}) => {
+const Modal:React.FC<Props> = ({show,onClose,title}) => {
+
+
     return (
         <>
             <BackDrop show={show} />
@@ -17,12 +19,11 @@ const Modal:React.FC<Props> = ({show,onClose, title, children}) => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5">
-                                Some kinda title
+                                {title}
                             </h1>
                             <button className="border" onClick={onClose}>X</button>
                         </div>
                         <p className="p-2">This is modal content</p>
-
                     </div>
                     <div className="modal-footer">
                     </div>

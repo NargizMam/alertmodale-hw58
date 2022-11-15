@@ -8,7 +8,7 @@ interface Props {
 const Alert: React.FC<Props> = ({type, onDismiss}) => {
     return (
         <>
-            <div className={['alert', type].join(' ')}>
+            <div className={`alert , alert-${type} col-6`}>
                 <span className="CloseBtn" style={{display: onDismiss===undefined ?'none': 'block'}}
                 >&times;</span>
                 This is an alert box.

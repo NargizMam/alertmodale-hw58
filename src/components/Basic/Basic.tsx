@@ -4,18 +4,16 @@ import Alert from "../UI/Alert/Alert";
 
 const Basic = () => {
     const [showModal, setShowModal] = useState(false);
+    const [openAlert, setOpenAlert] = useState(false);
     const [types] = useState(['primary', 'success', 'danger', 'warning']);
     const [title] = useState('Some kinda modal title');
-    const [buttons] = useState([
-        {type: 'primary', label: 'Continue', clicked: 'Continued!'},
-        {type: 'danger', label: 'Close', clicked: 'Closed!'}
-    ]);
+
 
     const openFirstPage = () => {
         setShowModal(true);
     };
     const openSecondPage = () => {
-        
+        setOpenAlert(true);
     };
     const cancel = () => setShowModal(false)
 
@@ -40,7 +38,7 @@ const Basic = () => {
                 <button className="btn btn-dark m-2"
                         onClick={openSecondPage}
                 >Уровень 2</button>
-                {alert}
+                {openAlert ? alert : null}
             </div>
 
         </>
