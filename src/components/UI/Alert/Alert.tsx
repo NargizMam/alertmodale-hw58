@@ -2,15 +2,14 @@ import React from 'react';
 
 interface Props {
     type: string;
-    dismiss: undefined;
+    onDismiss? : () =>  void;
 }
 
-const Alert: React.FC<Props> = ({type, dismiss}) => {
+const Alert: React.FC<Props> = ({type, onDismiss}) => {
     return (
         <>
             <div className={['alert', type].join(' ')}>
-                <span className="CloseBtn" style={{display: dismiss ===undefined ?'none': 'block'}}
-                      onClick={dismiss}
+                <span className="CloseBtn" style={{display: onDismiss===undefined ?'none': 'block'}}
                 >&times;</span>
                 This is an alert box.
             </div>
